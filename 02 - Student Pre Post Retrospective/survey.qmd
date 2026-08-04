@@ -1,4 +1,6 @@
 ---
+title: Student Pre Post Retrospective
+
 theme-settings:
   theme: yeti
   barposition: top
@@ -86,6 +88,9 @@ module_options <- c(
 )
 
 knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+
+# pagedown::chrome_print("survey.qmd")
+# pandoc survey.html -o 02_Student_Pre_Post_Retrospective.docx
 ```
 
 --- consentpage
@@ -151,6 +156,8 @@ sd_question(
 )
 ```
 
+<br>
+
 --- background
 
 # About your institution and module
@@ -191,6 +198,8 @@ sd_question(
   label = "What date did you complete your AI-GENe module?"
 )
 ```
+
+<br>
 
 --- reflection1
 
@@ -365,6 +374,8 @@ sd_question(
 )
 ```
 
+<br>
+
 --- openended
 
 # Additional reflections
@@ -417,6 +428,8 @@ sd_question(
 )
 ```
 
+<br>
+
 --- end
 
 Thank you for completing the AI-GENe survey.
@@ -426,6 +439,8 @@ Select **Finish Survey** below to submit your responses.
 ```{r}
 sd_close()
 ```
+
+<br>
 
 --- ineligible
 
