@@ -5,7 +5,17 @@
 IRB generally requires an editable document. Render the survey as HTML->PDF to ensure questions are printed:
 
 ```
-pagedown::chrome_print("survey.qmd")
+# Run in R console
+# Create nice html and pdf
+# pagedown::chrome_print("survey.qmd", "01_Faculty_Pre_Post_Retrospective.pdf")
 ```
 
-Then, open the pdf in Microsoft Word, allowing it do do any necessary conversion. Upload this docx to Google Drive.
+Create a Word editable version:
+
+```
+# Run in Terminal
+# Create simple word doc
+# pandoc survey.html -o 01_Faculty_Pre_Post_Retrospective.docx
+```
+
+Upload docx and pdf to Google Drive when finished.
