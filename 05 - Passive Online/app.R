@@ -1,0 +1,57 @@
+# Package setup ---------------------------------------------------------------
+
+# Install required packages:
+# install.packages("pak")
+# pak::pak("surveydown-dev/surveydown") # Development version from GitHub
+
+# Load packages
+library(surveydown)
+
+# Database setup --------------------------------------------------------------
+#
+# Details at: https://surveydown.org/docs/storing-data
+#
+# surveydown stores data on any PostgreSQL database. We recommend
+# https://supabase.com/ for a free and easy to use service.
+#
+# Once you have your database ready, run the following function to store your
+# database configuration parameters in a local .env file:
+#
+# sd_db_config()
+#
+# Once your parameters are stored, you are ready to connect to your database.
+# This template runs in preview mode (set via `mode: preview` in survey.qmd),
+# which saves responses locally instead of to a database. To collect real
+# responses, run sd_db_config() to store your database credentials, then
+# change `mode` to `database` in the survey.qmd YAML header.
+
+db <- sd_db_connect()
+
+# UI setup --------------------------------------------------------------------
+
+ui <- sd_ui()
+
+# Server setup ----------------------------------------------------------------
+
+server <- function(input, output, session) {
+  # Define any conditional skip logic here (skip to page if a condition is true)
+  sd_skip_if(
+    input$consent == "no" ~ "ineligible",
+    input$participant_type == "educator" ~ "educatorpage",
+    input$participant_type == "student" ~ "studentpage",
+    input$participant_type %in% c("staff", "other") ~ "staffpage"
+  )
+
+  # Define any conditional display logic here (show a question if a condition is true
+  sd_show_if(
+    input$educator_institution == "other" ~ "educator_institution_other",
+    input$student_institution == "other" ~ "student_institution_other",
+    input$affiliate_institution == "other" ~ "affiliate_institution_other"
+  )
+
+  # Run surveydown server and define database
+  sd_server(db = db)
+}
+
+# Launch the app
+shiny::shinyApp(ui = ui, server = server)
