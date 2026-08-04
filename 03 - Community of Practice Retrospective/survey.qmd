@@ -1,7 +1,6 @@
 ---
 theme-settings:
   theme: yeti
-  max-width: 2000px
   barposition: top
   footer-left: "Made with [surveydown](https://surveydown.org)"
 
