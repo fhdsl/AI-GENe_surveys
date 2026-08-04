@@ -40,7 +40,9 @@ server <- function(input, output, session) {
   )
 
   # Define any conditional display logic here (show a question if a condition is true)
-  sd_show_if()
+  sd_show_if(
+    input$institution_type == "other" ~ "institution_other"
+  )
 
   # Run surveydown server and define database
   sd_server(db = db)
