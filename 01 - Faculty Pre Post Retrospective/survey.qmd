@@ -1,4 +1,6 @@
 ---
+title: Faculty Pre Post Retrospective
+
 theme-settings:
   theme: yeti
   barposition: top
@@ -58,6 +60,9 @@ institution_options <- c(
 )
 
 knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+
+# pagedown::chrome_print("survey.qmd")
+# pandoc survey.html -o 01_Faculty_Pre_Post_Retrospective.docx
 ```
 
 --- consentpage
@@ -123,6 +128,8 @@ sd_question(
 )
 ```
 
+<br>
+
 --- institution
 
 # About your institution
@@ -146,6 +153,8 @@ sd_question(
   )
 )
 ```
+
+<br>
 
 --- experience1
 
@@ -260,6 +269,8 @@ sd_question(
 )
 ```
 
+<br>
+
 --- end
 
 Thank you for completing the AI-GENe survey.
@@ -269,6 +280,8 @@ Select **Finish Survey** below to submit your responses.
 ```{r}
 sd_close()
 ```
+
+<br>
 
 --- ineligible
 
