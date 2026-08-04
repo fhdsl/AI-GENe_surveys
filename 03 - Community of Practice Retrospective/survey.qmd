@@ -1,18 +1,13 @@
 ---
-# The YAML header specifies several settings for the survey but is not required.
-# A full list of settings can be found under _survey/settings.yml directory.
-
-# Use this section to customize theme, progress bar, and footers
 theme-settings:
-  theme: default
+  theme: yeti
+  max-width: 2000px
   barposition: top
   footer-left: "Made with [surveydown](https://surveydown.org)"
-  footer-right: '[<i class="bi bi-github"></i> Source Code](https://github.com/surveydown-dev/template_default)'
 
-# Use this section to customize survey behavior and appearance
 survey-settings:
   mode: preview
-  show-previous: false
+  show-previous: true
   use-cookies: false
   auto-scroll: false
   rate-survey: false
@@ -22,73 +17,336 @@ survey-settings:
   capture-metadata: true
   all-required: false
   all-shuffled: false
+  required:
+    - consent
+    - expectations
+    - community_connection
+    - field_belonging
+    - partners_collaborators
+    - professional_relationships
+    - institutional_visibility
+    - institutional_challenges
+    - student_impacts
+    - genomics_advocacy
 
-# Use this section to customize system messages
 system-messages:
-  warning: Warning Message
+  warning: Please answer the required questions before continuing.
   previous: Previous Page
   next: Next Page
   exit: Finish Survey
 ---
 
-```{r}
+```{r echo = FALSE, message = FALSE}
 library(surveydown)
+
+likert_options <- c(
+  "Not at all (1)"   = "1",
+  "Slightly (2)"     = "2",
+  "Moderately (3)"   = "3",
+  "Quite a bit (4)"  = "4",
+  "Very much (5)"    = "5"
+)
+
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
 ```
 
---- welcome
+--- consentpage
 
-# Default Template
+# Instructions to Participants
 
-Welcome to surveydown! This is a default template of a surveydown survey. It has two pages with one question on each page.
+Thank you for participating in the survey! We are collecting data about your experience as members of this community. This data will be used for reporting to the NIH and may be shared with similar communities.
 
-Here is a basic "multiple choice" question:
+### Data confidentiality
+
+Responses are anonymous. The potential risks to you are small. The potential benefits to the education community are high—we will use this information to report on the successes and challenges associated with the AI-GENe Program. Please do not include names, institution names, email addresses, or other identifying information in your written responses.
+
+### Data sharing
+
+No personally identifiable information, such as response timestamps, will be shared.
+
+### Participation
+
+You must be 18 or over to participate. You will be asked a series of questions about participating in the AI-GENe Program. **By completing this survey or questionnaire, you are consenting to be in this research study. Your participation is voluntary, and you can stop at any time.** You do not need to answer optional questions. Any answers you have filled in will be automatically submitted if you close the browser tab.
+
+Depending on how you answer the survey, this will take about **5 minutes** to complete.
+
+### Risk
+
+Risk of participation is minimal. The questions we ask pose minimal security risk to participants, as they focus on your personal experience and expectations. While we have taken measures to ensure the security of the survey responses, please be aware that no online system is completely secure. By participating in this survey, you understand and accept the inherent risks associated with transmitting information over the internet.
+
+### Consent
+
+The first question asks whether you are at least 18 years old and whether you consent, or agree, that data from your responses may be used for AI-GENe reporting purposes.
+
+<br>
+
+## Questions or problems
+
+If you have questions or problems, contact:
+
+- Ava Hoffman at [ahoffma2@fredhutch.org](mailto:ahoffma2@fredhutch.org)
+- Michael Schatz at [mschatz@jhu.edu](mailto:mschatz@jhu.edu)
+
+You may also contact the Johns Hopkins University Homewood Institutional Review Board (IRB) if you have questions about your rights as a participant. Contact the IRB if you feel you have not been treated fairly or if you have other concerns.
+
+- **IRB No.:** HIRB00024197
+- **Date approved:** XX/XX/2026
+- **HIRB Office phone:** 410-516-6580
+- **HIRB Office email:** [hirb@jhu.edu](mailto:hirb@jhu.edu)
+
+<br>
+
+## Consent for answers to be used by AI-GENe staff
 
 ```{r}
 sd_question(
-  type  = 'mc',
-  id    = 'penguins',
-  label = "What's your favorite penguin?",
+  type = "mc",
+  id = "consent",
+  label = paste(
+    "I am 18 or over *AND* I consent to my responses being used",
+    "for AI-GENe evaluation and reporting purposes."
+  ),
   option = c(
-    'Adélie'    = 'adelie',
-    'Chinstrap' = 'chinstrap',
-    'Gentoo'    = 'gentoo'
+    "Yes" = "yes",
+    "No"  = "no"
   )
 )
 ```
 
-There are several ways to navigate between pages in a surveydown survey:
-
-1. By default, navigation buttons are auto-created by the end of each survey page.
-2. You can also call `sd_nav()` by the end of a page, which is equivalent to the auto-creation.
-3. `sd_nav()` supports parameters to customize the navigation labels and destinations. For example, on this page, we can call `sd_nav(page_next = "page2", label_next = "Go to Page 2")` to customize the next button label and destination.
-
-```{r}
-sd_nav(page_next = "page2", label_next = "Go to Page 2")
-```
-
 --- page2
 
-This is another page in your survey.
+# Professional development
 
-{surveydown} supports many types of questions. For example, here is a simple `text` type question:
+The following questions ask about the impact AI-GENe had on your professional development.
 
 ```{r}
 sd_question(
-  type  = "text",
-  id    = "silly_word",
-  label = "Write a silly word here:"
+  type = "mc",
+  id = "expectations",
+  label = "AI-GENe has met or exceeded my initial expectations.",
+  option = likert_options
 )
 ```
 
-On this page, we don't call `sd_nav()` to auto-trigger the navigation button.
+```{r}
+sd_question(
+  type = "mc",
+  id = "community_connection",
+  label = paste(
+    "AI-GENe made me feel more connected to the broader genomics",
+    "research and education community."
+  ),
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "field_belonging",
+  label = paste(
+    "My involvement in AI-GENe has strengthened my sense of belonging",
+    "in the genomics field."
+  ),
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "partners_collaborators",
+  label = paste(
+    "I consider NHGRI partners and AI-GENe organizers",
+    "(e.g., Johns Hopkins) to be collaborators."
+  ),
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "professional_relationships",
+  label = paste(
+    "AI-GENe activities (virtual meetings, working groups, and",
+    "in-person meetings) helped me build professional relationships."
+  ),
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "institutional_visibility",
+  label = paste(
+    "AI-GENe activities have increased my visibility as a leader in",
+    "genomics and/or data science at my institution."
+  ),
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "institutional_challenges",
+  label = paste(
+    "AI-GENe helped me address the unique challenges I face",
+    "at my institution."
+  ),
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "work_connections",
+  label = paste(
+    "Optional: AI-GENe connections have been a core part of my",
+    "recent work/research."
+  ),
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "textarea",
+  id = "professional_comments",
+  label = "Optional: In a few sentences, tell us about your responses above."
+)
+```
+
+--- page3
+
+# Teaching and students
+
+The following questions ask about the impact AI-GENe had on your teaching and students.
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "student_impacts",
+  label = paste(
+    "I can identify positive impacts of AI-GENe and/or BioDIGS on my",
+    "students' academic and career trajectories."
+  ),
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "genomics_advocacy",
+  label = paste(
+    "AI-GENe has helped me effectively advocate for genomics education",
+    "at my institution."
+  ),
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "teaching_ability",
+  label = paste(
+    "Optional: AI-GENe participation has increased my ability to teach",
+    "genomic data science concepts."
+  ),
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "textarea",
+  id = "teaching_comments",
+  label = "Optional: In a few sentences, tell us about your responses above."
+)
+```
+
+--- page4
+
+# Your experience with AI-GENe
+
+The following open-ended questions are **optional**.
+
+Please do not include names, institution names, email addresses, or other identifying information in your responses.
+
+```{r}
+sd_question(
+  type = "textarea",
+  id = "memorable_experience",
+  label = "What is your most memorable experience from AI-GENe?"
+)
+```
+
+```{r}
+sd_question(
+  type = "textarea",
+  id = "future_improvements",
+  label = "How would you improve a future AI-GENe?"
+)
+```
+
+```{r}
+sd_question(
+  type = "textarea",
+  id = "helpful_activities",
+  label = "What activities did you find most helpful?"
+)
+```
+
+```{r}
+sd_question(
+  type = "textarea",
+  id = "helpful_materials",
+  label = "What materials did you find most helpful?"
+)
+```
+
+```{r}
+sd_question(
+  type = "textarea",
+  id = "valuable_outcome",
+  label = paste(
+    "What has been the single most valuable outcome of your",
+    "AI-GENe participation?"
+  )
+)
+```
+
+```{r}
+sd_question(
+  type = "textarea",
+  id = "other_feedback",
+  label = paste(
+    "Please share any other thoughts or feedback you have related",
+    "to AI-GENe."
+  )
+)
+```
 
 --- end
 
-## End
+Thank you for completing the AI-GENe survey.
 
-This is the last page in the survey.
+Select **Finish Survey** below to submit your responses.
 
-Here we call `sd_close()` to create a finish button to end the survey. When calling `sd_close()`, the auto-navigation is disabled.
+```{r}
+sd_close()
+```
+
+--- ineligible
+
+Thank you for your interest. You must be at least 18 years old and consent to the use of your responses for AI-GENe evaluation and reporting purposes to participate in this survey.
+
+Select **Finish Survey** below to close the survey.
 
 ```{r}
 sd_close()
