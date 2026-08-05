@@ -44,7 +44,7 @@ system-messages:
   next: Next Page
 ---
 
-```{r echo = FALSE, message = FALSE}
+```{r echo = FALSE, message = FALSE, warning=FALSE}
 library(surveydown)
 
 likert_options <- c(
