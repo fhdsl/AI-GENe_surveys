@@ -41,9 +41,9 @@ server <- function(input, output, session) {
   
   # Define any conditional display logic here (show a question if a condition is true)
   sd_show_if(
-    input$participant_type == "educator" ~ "teaching",
-    input$participant_type == "student" ~ "stem_interest",
-    input$participant_type %in% c("self_learner", "other") ~ "stem_application"
+    input$institution_type == "other" ~ "institution_other",
+    "other" %in% input$activities ~ "activities_other",
+    "classroom" %in% input$activities ~ "implementation"
   )
   
   # Run surveydown server and define database
