@@ -61,7 +61,9 @@ institution_options <- c(
 
 knitr::opts_chunk$set(echo = FALSE, message = FALSE)
 
-# pagedown::chrome_print("survey.qmd")
+# Create nice html and pdf
+# pagedown::chrome_print("survey.qmd", "01_Faculty_Pre_Post_Retrospective.pdf")
+# Create simple word doc
 # pandoc survey.html -o 01_Faculty_Pre_Post_Retrospective.docx
 ```
 
