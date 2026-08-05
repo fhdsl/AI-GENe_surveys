@@ -5,6 +5,7 @@ theme-settings:
   theme: yeti
   barposition: top
   footer-left: "Made with [surveydown](https://surveydown.org)"
+  footer-right: '[<i class="bi bi-github"></i> Source Code](https://github.com/fhdsl/AI-GENe_surveys)'
 
 survey-settings:
   mode: preview
@@ -42,7 +43,6 @@ system-messages:
   warning: Please answer the required questions before continuing.
   previous: Previous Page
   next: Next Page
-  exit: Finish Survey
 ---
 
 ```{r echo = FALSE, message = FALSE}
@@ -88,9 +88,12 @@ module_options <- c(
 )
 
 knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+```
 
-# pagedown::chrome_print("survey.qmd")
-# pandoc survey.html -o 02_Student_Pre_Post_Retrospective.docx
+```{r eval = FALSE}
+# Render print versions
+pagedown::chrome_print("survey.qmd", "02_Student_Pre_Post_Retrospective.pdf")
+system("pandoc survey.html -o 02_Student_Pre_Post_Retrospective.docx")
 ```
 
 --- consentpage
@@ -434,7 +437,7 @@ sd_question(
 
 Thank you for completing the AI-GENe survey.
 
-Select **Finish Survey** below to submit your responses.
+Click **Exit Survey** below to finish.
 
 ```{r}
 sd_close()
@@ -446,7 +449,7 @@ sd_close()
 
 Thank you for your interest. You must be at least 18 years old and consent to the use of your responses for AI-GENe evaluation and reporting purposes to participate in this survey.
 
-Select **Finish Survey** below to close the survey.
+Click **Exit Survey** below to finish.
 
 ```{r}
 sd_close()
