@@ -3,6 +3,7 @@ theme-settings:
   theme: yeti
   barposition: top
   footer-left: "Made with [surveydown](https://surveydown.org)"
+  footer-right: '[<i class="bi bi-github"></i> Source Code](https://github.com/fhdsl/AI-GENe_surveys)'
 
 survey-settings:
   mode: preview
@@ -51,7 +52,6 @@ system-messages:
   warning: Please answer the required questions before continuing.
   previous: Previous Page
   next: Next Page
-  exit: Finish Survey
 ---
 
 ```{r echo=FALSE, message=FALSE}
@@ -112,6 +112,12 @@ affiliated_institution_options <- c(
 )
 
 knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+```
+
+```{r eval = FALSE}
+# Render print versions
+pagedown::chrome_print("survey.qmd", "04_Event.pdf")
+system("pandoc survey.html -o 04_Event.docx")
 ```
 
 --- consentpage
@@ -314,12 +320,14 @@ sd_question(
   label = "Please provide any other comments you have."
 )
 ```
+  
+<br>
 
 --- educatorend
 
 Thank you for completing the AI-GENe survey.
 
-Select **Finish Survey** below to submit your responses.
+Click **Exit Survey** below to finish.
 
 ```{r}
 sd_close()
@@ -351,6 +359,8 @@ sd_question(
   label = "Optional: If you selected “Other,” please describe the type of institution you attend."
 )
 ```
+  
+<br>
 
 These questions are intended to help you reflect on your experience with the AI-GENe event. Please rate how much you agree with each statement.
 
@@ -466,12 +476,14 @@ sd_question(
   label = "Optional: What suggestions, if any, do you have for improvement?"
 )
 ```
+  
+<br>
 
 --- studentend
 
 Thank you for completing the AI-GENe survey.
 
-Select **Finish Survey** below to submit your responses.
+Click **Exit Survey** below to finish.
 
 ```{r}
 sd_close()
@@ -503,6 +515,8 @@ sd_question(
   label = "Optional: If you selected “Other,” please describe the type of institution with which you are affiliated."
 )
 ```
+  
+<br>
 
 These questions are intended to help you reflect on your experience with the AI-GENe event. Please rate how much you agree with each statement.
 
@@ -618,22 +632,26 @@ sd_question(
   label = "Optional: What suggestions, if any, do you have for improvement?"
 )
 ```
+  
+<br>
 
 --- staffend
 
 Thank you for completing the AI-GENe survey.
 
-Select **Finish Survey** below to submit your responses.
+Click **Exit Survey** below to finish.
 
 ```{r}
 sd_close()
 ```
+  
+<br>
 
 --- ineligible
 
 Thank you for your interest. You must be at least 18 years old and consent to the use of your responses for AI-GENe evaluation and reporting purposes to participate in this survey.
 
-Select **Finish Survey** below to close the survey.
+Click **Exit Survey** below to finish.
 
 ```{r}
 sd_close()

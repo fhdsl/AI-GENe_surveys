@@ -1,8 +1,11 @@
 ---
+title: Passive Online Survey
+
 theme-settings:
   theme: yeti
   barposition: top
   footer-left: "Made with [surveydown](https://surveydown.org)"
+  footer-right: '[<i class="bi bi-github"></i> Source Code](https://github.com/fhdsl/AI-GENe_surveys)'
 
 survey-settings:
   mode: preview
@@ -19,42 +22,32 @@ survey-settings:
   required:
     - consent
     - participant_type
-    - event_attended
-    - educator_institution
-    - session_helpfulness
-    - recommend_materials
-    - facilitator_confidence
-    - delivery_modules
-    - student_institution
-    - student_lab_skills
-    - student_data_analysis
-    - student_genomics_tools
-    - student_ai_tools
-    - student_metagenomics_knowledge
-    - student_ai_knowledge
-    - student_genomics_curiosity
-    - student_genomics_learning
-    - student_ai_genomics_understanding
-    - affiliate_institution
-    - affiliate_institution_other
-    - affiliate_lab_skills
-    - affiliate_data_analysis
-    - affiliate_genomics_tools
-    - affiliate_ai_tools
-    - affiliate_metagenomics_knowledge
-    - affiliate_ai_knowledge
-    - affiliate_genomics_curiosity
-    - affiliate_genomics_learning
-    - affiliate_ai_genomics_understanding
+    - module_completed
+    - lab_skills
+    - data_analysis_skills
+    - genomics_tools
+    - ai_tools
+    - apply_skills
+    - evaluate_evidence
+    - draw_conclusions
+    - real_science
+    - stem_interest
+    - metagenomics_knowledge
+    - ai_models_knowledge
+    - genomics_curiosity
+    - learn_more_genomics
+    - ai_genomics_understanding
+    - teaching_confidence
+    - real_world_significance
+    - incorporate_similar_content
 
 system-messages:
   warning: Please answer the required questions before continuing.
   previous: Previous Page
   next: Next Page
-  exit: Finish Survey
 ---
 
-```{r echo=FALSE, message=FALSE}
+```{r echo = FALSE, message = FALSE}
 library(surveydown)
 
 likert_options <- c(
@@ -65,60 +58,48 @@ likert_options <- c(
   "Very much (5)"   = "5"
 )
 
-helpfulness_options <- c(
-  "Not at all helpful (1)"  = "1",
-  "Slightly helpful (2)"    = "2",
-  "Moderately helpful (3)"  = "3",
-  "Quite a bit helpful (4)" = "4",
-  "Very helpful (5)"        = "5"
+participant_options <- c(
+  "Educator - looking for education material to use in courses" = "educator",
+  "Student - using AI-GENe for a course or to help with a course" = "student",
+  "Self-learner - interested in learning more about the skills, topics, and/or concepts covered in AI-GENe" = "self_learner",
+  "Other, including wish not to say" = "other"
 )
 
-recommendation_options <- c(
-  "Not at all likely (1)" = "1",
-  "Slightly likely (2)"   = "2",
-  "Moderately likely (3)" = "3",
-  "Quite likely (4)"      = "4",
-  "Very likely (5)"       = "5"
-)
-
-confidence_options <- c(
-  "Not at all confident (1)" = "1",
-  "Slightly confident (2)"   = "2",
-  "Moderately confident (3)" = "3",
-  "Quite confident (4)"      = "4",
-  "Very confident (5)"       = "5"
-)
-
-educational_institution_options <- c(
-  "Doctoral University – Very high research activity (R1)" = "r1",
-  "Doctoral University – High research activity (R2)"      = "r2",
-  "Master's College or University"                          = "masters",
-  "Primarily Undergraduate Institution (PUI)"               = "pui",
-  "Community College"                                       = "community_college",
-  "High School"                                             = "high_school",
-  "Other"                                                   = "other"
-)
-
-affiliated_institution_options <- c(
-  "Doctoral University – Very high research activity (R1)" = "r1",
-  "Doctoral University – High research activity (R2)"      = "r2",
-  "Master's College or University"                          = "masters",
-  "Primarily Undergraduate Institution (PUI)"               = "pui",
-  "Community College"                                       = "community_college",
-  "High School"                                             = "high_school",
-  "Non-profit Research Institution"                         = "nonprofit_research",
-  "Biomedical Research Company"                             = "biomedical_company",
-  "Other"                                                   = "other"
+module_options <- c(
+  "Genome Annotation and the Phenotypic Effects of Variants" =
+    "genome_annotation_variants",
+  "Predicting Gene Expression Patterns" =
+    "gene_expression",
+  "Predicting Protein Structure from Genomic Data" =
+    "protein_structure",
+  "Sample Collection and HMW DNA Isolation" =
+    "sample_collection_hmw_dna",
+  "Assessing and Improving DNA Quality" =
+    "dna_quality",
+  "DNA Library Preparation and Long Read Sequencing" =
+    "library_preparation_long_read",
+  "Sequencing Data QC & Taxonomic Profiling" =
+    "sequencing_qc_taxonomic_profiling",
+  "Metagenome Assembly & AMR Gene Annotation" =
+    "metagenome_assembly_amr",
+  "LLMs and Scientific Literacy" =
+    "llms_scientific_literacy"
 )
 
 knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+```
+
+```{r eval = FALSE}
+# Render print versions
+pagedown::chrome_print("survey.qmd", "05_Passive_Online.pdf")
+system("pandoc survey.html -o 05_Passive_Online.docx")
 ```
 
 --- consentpage
 
 # Instructions to Participants
 
-Thank you for participating in the survey! We are collecting data about your thoughts on the AI-GENe events. This data will be used to guide the AI-GENe Program and may ultimately be used for a research publication and reporting to the NIH.
+Thank you for participating in the survey! We are collecting data about your experience learning genomics and genetics topics. This data will be used to guide the AI-GENe Program and may ultimately be used for a research publication and reporting to the NIH.
 
 ### Data confidentiality
 
@@ -130,9 +111,9 @@ No personally identifiable information, such as response timestamps, will be sha
 
 ### Participation
 
-You must be 18 or over to participate. You will be asked a series of questions about your experience with the AI-GENe modules. **By completing this survey or questionnaire, you are consenting to be in this research study. Your participation is voluntary, and you can stop at any time.** You do not need to answer optional questions. Any answers you have filled in will be automatically submitted if you close the browser tab.
+You must be 18 or over to participate. You will be asked a series of questions about participating in AI-GENe modules. **By completing this survey or questionnaire, you are consenting to be in this research study. Your participation is voluntary, and you can stop at any time.** You do not need to answer optional questions. Any answers you have filled in will be automatically submitted if you close the browser tab.
 
-Depending on how you answer the survey, this will take approximately **3–6 minutes** to complete.
+Depending on how you answer the survey, this will take about **3–6 minutes** to complete. If you are a student, taking this survey will not affect your grade.
 
 ### Risk
 
@@ -166,7 +147,7 @@ You may also contact the Johns Hopkins University Homewood Institutional Review 
 sd_question(
   type = "mc",
   id = "consent",
-  label = "I am 18 or over AND I consent to my responses being used for AI-GENe evaluation and development.",
+  label = "I am 18 or over AND I consent to my responses being used for AI-GENe’s evaluation and development.",
   option = c(
     "Yes" = "yes",
     "No"  = "no"
@@ -176,464 +157,299 @@ sd_question(
 
 <br>
 
---- participant_information
+--- background
 
-# Information about you
+# About you and the AI-GENe module
 
 ```{r}
 sd_question(
   type = "mc",
   id = "participant_type",
-  label = "How would you describe yourself? Choose the best option. You may select “Other” if you wish not to say.",
-  option = c(
-    "Educator" = "educator",
-    "Student/trainee" = "student",
-    "Staff/researcher" = "staff",
-    "Other, including wish not to say" = "other"
-  )
+  label = "How would you describe yourself? Choose the best option. You may select “Other, including wish not to say” if you do not wish to identify a category.",
+  option = participant_options
 )
 ```
 
 ```{r}
 sd_question(
   type = "mc",
-  id = "event_attended",
-  label = "Which AI-GENe event or recording did you attend or view?",
-  option = c(
-    "Train-the-trainer session"        = "train_the_trainer",
-    "Online training academy workshop" = "online_training_academy",
-    "Hosted talk"                      = "hosted_talk",
-    "Other"                            = "other"
-  )
+  id = "module_completed",
+  label = "Which AI-GENe module did you complete?",
+  option = module_options
 )
 ```
 
 <br>
 
---- educatorpage
+--- reflection
 
-# Your experience with AI-GENe
+# Reflecting on your experience
 
-The questions displayed on this page are based on how you described yourself previously.
-
-Please do not include names, institution names, email addresses, or other identifying information in your written responses.
+These questions are intended to help you reflect on your experience working through the AI-GENe module. Please rate how much you agree with each statement.
 
 ```{r}
 sd_question(
   type = "mc",
-  id = "educator_institution",
-  label = "Describe the institution where you do most of your instruction.",
-  option = educational_institution_options
-)
-```
-
-```{r}
-sd_question(
-  type = "textarea",
-  id = "educator_institution_other",
-  label = "Optional: If you selected “Other,” please describe the type of institution where you do most of your instruction."
+  id = "lab_skills",
+  label = "After completing the activity, my skills and comfort with genetics lab work have improved.",
+  option = likert_options
 )
 ```
 
 ```{r}
 sd_question(
   type = "mc",
-  id = "session_helpfulness",
-  label = "How helpful did you find our session?",
-  option = helpfulness_options
+  id = "data_analysis_skills",
+  label = "After completing the activity, my skills and comfort with analyzing genetic data have improved.",
+  option = likert_options
 )
 ```
 
 ```{r}
 sd_question(
   type = "mc",
-  id = "recommend_materials",
-  label = "How likely are you to recommend AI-GENe materials to others?",
-  option = recommendation_options
+  id = "genomics_tools",
+  label = "After completing the activity, my skills and comfort with using genomics tools and/or websites have improved.",
+  option = likert_options
 )
 ```
 
 ```{r}
 sd_question(
   type = "mc",
-  id = "facilitator_confidence",
-  label = "How confident do you feel right now in your ability to facilitate this course and/or our materials with your own participants?",
-  option = confidence_options
+  id = "ai_tools",
+  label = "After completing the activity, my skills and comfort with using AI-based tools for genetics work have improved.",
+  option = likert_options
 )
 ```
 
 ```{r}
 sd_question(
-  type = "mc_multiple",
-  id = "delivery_modules",
-  label = "Do you intend to deliver this content? If yes, select the modules you intend to deliver. Select all that apply.",
-  option = c(
-    "Genome Annotation and the Phenotypic Effects of Variants" = "genome_annotation",
-    "Predicting Gene Expression Patterns" = "gene_expression",
-    "Predicting Protein Structure from Genomic Data" = "protein_structure",
-    "Sample Collection and HMW DNA Isolation" = "sample_collection",
-    "Assessing and Improving DNA Quality" = "dna_quality",
-    "DNA Library Preparation and Long Read Sequencing" = "library_preparation",
-    "Sequencing Data QC & Taxonomic Profiling" = "sequencing_qc",
-    "Metagenome Assembly & AMR Gene Annotation" = "metagenome_assembly",
-    "LLMs and Scientific Literacy" = "llms_scientific_literacy",
-    "Full miniCURE (all modules listed above)" = "full_minicure",
-    "I do not intend to deliver this content" = "do_not_intend"
-  )
+  type = "mc",
+  id = "apply_skills",
+  label = "This activity made me apply my skills, rather than recall facts.",
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "evaluate_evidence",
+  label = "This activity made me evaluate evidence, rather than recall facts.",
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "draw_conclusions",
+  label = "This activity helped me draw conclusions from data.",
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "real_science",
+  label = 'This activity allowed me to do "real science."',
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "stem_interest",
+  label = "After completing the activity, I have more interest in STEM careers.",
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "stem_application",
+  label = "After completing the activity, I am more interested in incorporating what I learned into my work/research.",
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "metagenomics_knowledge",
+  label = "After completing the activity, I am more knowledgeable about how metagenomics research happens.",
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "ai_models_knowledge",
+  label = "After completing the activity, I am more knowledgeable about how AI models work.",
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "genomics_curiosity",
+  label = "After completing the activity, I am more curious about genomics/metagenomics/genetics.",
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "learn_more_genomics",
+  label = "After completing the activity, I want to learn more about genomics/genetics.",
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "ai_genomics_understanding",
+  label = "After completing the activity, I have a better understanding of how AI is used in genomics/metagenomics research.",
+  option = likert_options
+)
+```
+
+<br>
+
+Please do not include names, institution names, email addresses, or other identifying information in your responses.
+
+```{r}
+sd_question(
+  type = "textarea",
+  id = "reflection_comments",
+  label = "(Optional) In 1–2 sentences, tell us about your responses above."
 )
 ```
 
 ```{r}
 sd_question(
   type = "textarea",
-  id = "teaching_support",
-  label = "What support or resources would help you feel more ready to teach this?"
+  id = "knowledge_gained",
+  label = "(Optional) In 1–2 sentences, tell us something you are more knowledgeable about."
+)
+```
+
+<br>
+
+--- teaching
+
+# Reflecting on use in the classroom
+
+These questions are intended to help you reflect on your experience working through the AI-GENe module. Please rate how much you agree with each statement.
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "teaching_confidence",
+  label = "I feel more confident teaching content like the AI-GENe module.",
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "real_world_significance",
+  label = "The AI-GENe module had real-world significance.",
+  option = likert_options
+)
+```
+
+```{r}
+sd_question(
+  type = "mc",
+  id = "incorporate_similar_content",
+  label = "I plan to incorporate more content similar to the AI-GENe module.",
+  option = likert_options
+)
+```
+
+<br>
+
+Please do not include names, institution names, email addresses, or other identifying information in your responses.
+
+```{r}
+sd_question(
+  type = "textarea",
+  id = "reflection_comments_teaching",
+  label = "(Optional) In 1–2 sentences, tell us about your responses above."
 )
 ```
 
 ```{r}
 sd_question(
   type = "textarea",
-  id = "delivery_barriers",
-  label = "What barriers might prevent you from delivering this content in the next 12 months?"
+  id = "reflection_comments_likely",
+  label = "(Optional) Is there anything that would make you more likely to teach the AI-GENe module to your students?"
+)
+```
+
+<br>
+
+--- openended
+
+# Additional reflections
+
+The following open-ended questions are **optional**.
+
+Please do not include names, institution names, email addresses, or other identifying information in your responses.
+
+```{r}
+sd_question(
+  type = "textarea",
+  id = "engaging_parts",
+  label = "(Optional) Were any parts of the activity particularly engaging? If so, please describe."
 )
 ```
 
 ```{r}
 sd_question(
   type = "textarea",
-  id = "repeat_delivery",
-  label = "What would make you more likely to deliver this content more than once?"
+  id = "confusing_parts",
+  label = "(Optional) Did you find any parts of the activity confusing? If so, please describe."
 )
 ```
 
 ```{r}
 sd_question(
   type = "textarea",
-  id = "educator_comments",
-  label = "Please provide any other comments you have."
+  id = "improvement_suggestions",
+  label = "(Optional) What suggestions, if any, do you have for lesson improvement?"
 )
 ```
 
---- educatorend
+<br>
+
+--- end
 
 Thank you for completing the AI-GENe survey.
 
-Select **Finish Survey** below to submit your responses.
+Click **Exit Survey** below to finish.
 
 ```{r}
 sd_close()
 ```
 
 <br>
- 
---- studentpage
-
-# Your experience with AI-GENe
-
-The questions displayed on this page are based on how you described yourself previously.
-
-Please do not include names, institution names, email addresses, or other identifying information in your written responses.
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "student_institution",
-  label = "Describe the institution where you attend.",
-  option = educational_institution_options
-)
-```
-
-```{r}
-sd_question(
-  type = "textarea",
-  id = "student_institution_other",
-  label = "Optional: If you selected “Other,” please describe the type of institution you attend."
-)
-```
-
-These questions are intended to help you reflect on your experience with the AI-GENe event. Please rate how much you agree with each statement.
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "student_lab_skills",
-  label = "My skills and comfort with genetics lab work have improved.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "student_data_analysis",
-  label = "My skills and comfort with analyzing genetic data have improved.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "student_genomics_tools",
-  label = "My skills and comfort with using genomics tools and/or websites have improved.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "student_ai_tools",
-  label = "My skills and comfort with using AI-based tools for genetics work have improved.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "student_metagenomics_knowledge",
-  label = "I am more knowledgeable about how metagenomics research happens.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "student_ai_knowledge",
-  label = "I am more knowledgeable about how AI models work.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "student_genomics_curiosity",
-  label = "I am more curious about genomics, metagenomics, and/or genetics.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "student_genomics_learning",
-  label = "I want to learn more about genomics and/or genetics.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "student_ai_genomics_understanding",
-  label = "I have a better understanding of how AI is used in genomics and/or metagenomics research.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "textarea",
-  id = "student_response_comments",
-  label = "Optional: In 1–2 sentences, tell us about your responses above."
-)
-```
-
-```{r}
-sd_question(
-  type = "textarea",
-  id = "student_engaging_parts",
-  label = "Optional: Were any parts of the event particularly engaging? If so, please describe."
-)
-```
-
-```{r}
-sd_question(
-  type = "textarea",
-  id = "student_confusing_parts",
-  label = "Optional: Did you find any parts of the event confusing? If so, please describe."
-)
-```
-
-```{r}
-sd_question(
-  type = "textarea",
-  id = "student_improvement_suggestions",
-  label = "Optional: What suggestions, if any, do you have for improvement?"
-)
-```
-
---- studentend
-
-Thank you for completing the AI-GENe survey.
-
-Select **Finish Survey** below to submit your responses.
-
-```{r}
-sd_close()
-```
-
-<br>
-
---- staffpage
-
-# Your experience with AI-GENe
-
-The questions displayed on this page are based on how you described yourself previously.
-
-Please do not include names, institution names, email addresses, or other identifying information in your written responses.
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "affiliate_institution",
-  label = "Describe the institution with which you are affiliated.",
-  option = affiliated_institution_options
-)
-```
-
-```{r}
-sd_question(
-  type = "textarea",
-  id = "affiliate_institution_other",
-  label = "Optional: If you selected “Other,” please describe the type of institution with which you are affiliated."
-)
-```
-
-These questions are intended to help you reflect on your experience with the AI-GENe event. Please rate how much you agree with each statement.
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "affiliate_lab_skills",
-  label = "My skills and comfort with genetics lab work have improved.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "affiliate_data_analysis",
-  label = "My skills and comfort with analyzing genetic data have improved.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "affiliate_genomics_tools",
-  label = "My skills and comfort with using genomics tools and/or websites have improved.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "affiliate_ai_tools",
-  label = "My skills and comfort with using AI-based tools for genetics work have improved.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "affiliate_metagenomics_knowledge",
-  label = "I am more knowledgeable about how metagenomics research happens.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "affiliate_ai_knowledge",
-  label = "I am more knowledgeable about how AI models work.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "affiliate_genomics_curiosity",
-  label = "I am more curious about genomics, metagenomics, and/or genetics.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "affiliate_genomics_learning",
-  label = "I want to learn more about genomics and/or genetics.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "mc",
-  id = "affiliate_ai_genomics_understanding",
-  label = "I have a better understanding of how AI is used in genomics and/or metagenomics research.",
-  option = likert_options
-)
-```
-
-```{r}
-sd_question(
-  type = "textarea",
-  id = "affiliate_response_comments",
-  label = "Optional: In 1–2 sentences, tell us about your responses above."
-)
-```
-
-```{r}
-sd_question(
-  type = "textarea",
-  id = "affiliate_engaging_parts",
-  label = "Optional: Were any parts of the event particularly engaging? If so, please describe."
-)
-```
-
-```{r}
-sd_question(
-  type = "textarea",
-  id = "affiliate_confusing_parts",
-  label = "Optional: Did you find any parts of the event confusing? If so, please describe."
-)
-```
-
-```{r}
-sd_question(
-  type = "textarea",
-  id = "affiliate_improvement_suggestions",
-  label = "Optional: What suggestions, if any, do you have for improvement?"
-)
-```
-
---- staffend
-
-Thank you for completing the AI-GENe survey.
-
-Select **Finish Survey** below to submit your responses.
-
-```{r}
-sd_close()
-```
 
 --- ineligible
 
 Thank you for your interest. You must be at least 18 years old and consent to the use of your responses for AI-GENe evaluation and reporting purposes to participate in this survey.
 
-Select **Finish Survey** below to close the survey.
+Click **Exit Survey** below to finish.
 
 ```{r}
 sd_close()

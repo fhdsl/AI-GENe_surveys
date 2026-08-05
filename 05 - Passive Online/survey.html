@@ -11,7 +11,7 @@
 
 
 
-<title>survey.knit</title>
+<title>Passive Online Survey</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,6 +348,7 @@ display: none;
 
 
 
+<h1 class="title toc-ignore">Passive Online Survey</h1>
 
 </div>
 
@@ -356,9 +357,9 @@ display: none;
 <div id="instructions-to-participants" class="section level1">
 <h1>Instructions to Participants</h1>
 <p>Thank you for participating in the survey! We are collecting data
-about your thoughts on the AI-GENe events. This data will be used to
-guide the AI-GENe Program and may ultimately be used for a research
-publication and reporting to the NIH.</p>
+about your experience learning genomics and genetics topics. This data
+will be used to guide the AI-GENe Program and may ultimately be used for
+a research publication and reporting to the NIH.</p>
 <div id="data-confidentiality" class="section level3">
 <h3>Data confidentiality</h3>
 <p>Responses are anonymous. The potential risks to you are small. The
@@ -375,14 +376,15 @@ will be shared.</p>
 <div id="participation" class="section level3">
 <h3>Participation</h3>
 <p>You must be 18 or over to participate. You will be asked a series of
-questions about your experience with the AI-GENe modules. <strong>By
-completing this survey or questionnaire, you are consenting to be in
-this research study. Your participation is voluntary, and you can stop
-at any time.</strong> You do not need to answer optional questions. Any
-answers you have filled in will be automatically submitted if you close
-the browser tab.</p>
-<p>Depending on how you answer the survey, this will take approximately
-<strong>3–6 minutes</strong> to complete.</p>
+questions about participating in AI-GENe modules. <strong>By completing
+this survey or questionnaire, you are consenting to be in this research
+study. Your participation is voluntary, and you can stop at any
+time.</strong> You do not need to answer optional questions. Any answers
+you have filled in will be automatically submitted if you close the
+browser tab.</p>
+<p>Depending on how you answer the survey, this will take about
+<strong>3–6 minutes</strong> to complete. If you are a student, taking
+this survey will not affect your grade.</p>
 </div>
 <div id="risk" class="section level3">
 <h3>Risk</h3>
@@ -424,7 +426,7 @@ fairly or if you have other concerns.</p>
 <h2>Consent for answers to be used by AI-GENe staff</h2>
 <div id="container-consent" data-question-id="consent" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;consent_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;consent_interacted&#39;, true, {priority: &#39;event&#39;});">
 <div id="consent" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="consent-label">
-<label class="control-label" id="consent-label" for="consent"><p>I am 18 or over AND I consent to my responses being used for AI-GENe evaluation and development.</p>
+<label class="control-label" id="consent-label" for="consent"><p>I am 18 or over AND I consent to my responses being used for AI-GENe’s evaluation and development.</p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
@@ -444,32 +446,32 @@ fairly or if you have other concerns.</p>
 <span class="hidden-asterisk">*</span>
 </div>
 <p><br></p>
-<p>— participant_information</p>
+<p>— background</p>
 </div>
 </div>
-<div id="information-about-you" class="section level1">
-<h1>Information about you</h1>
+<div id="about-you-and-the-ai-gene-module" class="section level1">
+<h1>About you and the AI-GENe module</h1>
 <div id="container-participant_type" data-question-id="participant_type" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;participant_type_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;participant_type_interacted&#39;, true, {priority: &#39;event&#39;});">
 <div id="participant_type" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="participant_type-label">
-<label class="control-label" id="participant_type-label" for="participant_type"><p>How would you describe yourself? Choose the best option. You may select “Other” if you wish not to say.</p>
+<label class="control-label" id="participant_type-label" for="participant_type"><p>How would you describe yourself? Choose the best option. You may select “Other, including wish not to say” if you do not wish to identify a category.</p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
 <label>
 <input type="radio" name="participant_type" value="educator"></input>
-<span>Educator</span>
+<span>Educator - looking for education material to use in courses</span>
 </label>
 </div>
 <div class="radio">
 <label>
 <input type="radio" name="participant_type" value="student"></input>
-<span>Student/trainee</span>
+<span>Student - using AI-GENe for a course or to help with a course</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="participant_type" value="staff"></input>
-<span>Staff/researcher</span>
+<input type="radio" name="participant_type" value="self_learner"></input>
+<span>Self-learner - interested in learning more about the skills, topics, and/or concepts covered in AI-GENe</span>
 </label>
 </div>
 <div class="radio">
@@ -482,467 +484,109 @@ fairly or if you have other concerns.</p>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
-<div id="container-event_attended" data-question-id="event_attended" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;event_attended_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;event_attended_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="event_attended" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="event_attended-label">
-<label class="control-label" id="event_attended-label" for="event_attended"><p>Which AI-GENe event or recording did you attend or view?</p>
+<div id="container-module_completed" data-question-id="module_completed" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;module_completed_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;module_completed_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="module_completed" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="module_completed-label">
+<label class="control-label" id="module_completed-label" for="module_completed"><p>Which AI-GENe module did you complete?</p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
 <label>
-<input type="radio" name="event_attended" value="train_the_trainer"></input>
-<span>Train-the-trainer session</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="event_attended" value="online_training_academy"></input>
-<span>Online training academy workshop</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="event_attended" value="hosted_talk"></input>
-<span>Hosted talk</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="event_attended" value="other"></input>
-<span>Other</span>
-</label>
-</div>
-</div>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<p><br></p>
-<p>— educatorpage</p>
-</div>
-<div id="your-experience-with-ai-gene" class="section level1">
-<h1>Your experience with AI-GENe</h1>
-<p>The questions displayed on this page are based on how you described
-yourself previously.</p>
-<p>Please do not include names, institution names, email addresses, or
-other identifying information in your written responses.</p>
-<div id="container-educator_institution" data-question-id="educator_institution" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;educator_institution_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;educator_institution_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="educator_institution" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="educator_institution-label">
-<label class="control-label" id="educator_institution-label" for="educator_institution"><p>Describe the institution where you do most of your instruction.</p>
-</label>
-<div class="shiny-options-group">
-<div class="radio">
-<label>
-<input type="radio" name="educator_institution" value="r1"></input>
-<span>Doctoral University – Very high research activity (R1)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="educator_institution" value="r2"></input>
-<span>Doctoral University – High research activity (R2)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="educator_institution" value="masters"></input>
-<span>Master’s College or University</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="educator_institution" value="pui"></input>
-<span>Primarily Undergraduate Institution (PUI)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="educator_institution" value="community_college"></input>
-<span>Community College</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="educator_institution" value="high_school"></input>
-<span>High School</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="educator_institution" value="other"></input>
-<span>Other</span>
-</label>
-</div>
-</div>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-educator_institution_other" data-question-id="educator_institution_other" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;educator_institution_other_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;educator_institution_other_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div class="shiny-input-textarea form-group shiny-input-container">
-<label class="control-label" id="educator_institution_other-label" for="educator_institution_other"><p>Optional: If you selected “Other,” please describe the type of institution where you do most of your instruction.</p>
-</label>
-<textarea id="educator_institution_other" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-session_helpfulness" data-question-id="session_helpfulness" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;session_helpfulness_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;session_helpfulness_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="session_helpfulness" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="session_helpfulness-label">
-<label class="control-label" id="session_helpfulness-label" for="session_helpfulness"><p>How helpful did you find our session?</p>
-</label>
-<div class="shiny-options-group">
-<div class="radio">
-<label>
-<input type="radio" name="session_helpfulness" value="1"></input>
-<span>Not at all helpful (1)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="session_helpfulness" value="2"></input>
-<span>Slightly helpful (2)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="session_helpfulness" value="3"></input>
-<span>Moderately helpful (3)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="session_helpfulness" value="4"></input>
-<span>Quite a bit helpful (4)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="session_helpfulness" value="5"></input>
-<span>Very helpful (5)</span>
-</label>
-</div>
-</div>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-recommend_materials" data-question-id="recommend_materials" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;recommend_materials_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;recommend_materials_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="recommend_materials" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="recommend_materials-label">
-<label class="control-label" id="recommend_materials-label" for="recommend_materials"><p>How likely are you to recommend AI-GENe materials to others?</p>
-</label>
-<div class="shiny-options-group">
-<div class="radio">
-<label>
-<input type="radio" name="recommend_materials" value="1"></input>
-<span>Not at all likely (1)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="recommend_materials" value="2"></input>
-<span>Slightly likely (2)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="recommend_materials" value="3"></input>
-<span>Moderately likely (3)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="recommend_materials" value="4"></input>
-<span>Quite likely (4)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="recommend_materials" value="5"></input>
-<span>Very likely (5)</span>
-</label>
-</div>
-</div>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-facilitator_confidence" data-question-id="facilitator_confidence" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;facilitator_confidence_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;facilitator_confidence_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="facilitator_confidence" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="facilitator_confidence-label">
-<label class="control-label" id="facilitator_confidence-label" for="facilitator_confidence"><p>How confident do you feel right now in your ability to facilitate this course and/or our materials with your own participants?</p>
-</label>
-<div class="shiny-options-group">
-<div class="radio">
-<label>
-<input type="radio" name="facilitator_confidence" value="1"></input>
-<span>Not at all confident (1)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="facilitator_confidence" value="2"></input>
-<span>Slightly confident (2)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="facilitator_confidence" value="3"></input>
-<span>Moderately confident (3)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="facilitator_confidence" value="4"></input>
-<span>Quite confident (4)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="facilitator_confidence" value="5"></input>
-<span>Very confident (5)</span>
-</label>
-</div>
-</div>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-delivery_modules" data-question-id="delivery_modules" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;delivery_modules_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;delivery_modules_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="delivery_modules" class="form-group shiny-input-checkboxgroup shiny-input-container" role="group" aria-labelledby="delivery_modules-label">
-<label class="control-label" id="delivery_modules-label" for="delivery_modules"><p>Do you intend to deliver this content? If yes, select the modules you intend to deliver. Select all that apply.</p>
-</label>
-<div class="shiny-options-group">
-<div class="checkbox">
-<label>
-<input type="checkbox" name="delivery_modules" value="genome_annotation"></input>
+<input type="radio" name="module_completed" value="genome_annotation_variants"></input>
 <span>Genome Annotation and the Phenotypic Effects of Variants</span>
 </label>
 </div>
-<div class="checkbox">
+<div class="radio">
 <label>
-<input type="checkbox" name="delivery_modules" value="gene_expression"></input>
+<input type="radio" name="module_completed" value="gene_expression"></input>
 <span>Predicting Gene Expression Patterns</span>
 </label>
 </div>
-<div class="checkbox">
+<div class="radio">
 <label>
-<input type="checkbox" name="delivery_modules" value="protein_structure"></input>
+<input type="radio" name="module_completed" value="protein_structure"></input>
 <span>Predicting Protein Structure from Genomic Data</span>
 </label>
 </div>
-<div class="checkbox">
+<div class="radio">
 <label>
-<input type="checkbox" name="delivery_modules" value="sample_collection"></input>
+<input type="radio" name="module_completed" value="sample_collection_hmw_dna"></input>
 <span>Sample Collection and HMW DNA Isolation</span>
 </label>
 </div>
-<div class="checkbox">
+<div class="radio">
 <label>
-<input type="checkbox" name="delivery_modules" value="dna_quality"></input>
+<input type="radio" name="module_completed" value="dna_quality"></input>
 <span>Assessing and Improving DNA Quality</span>
 </label>
 </div>
-<div class="checkbox">
+<div class="radio">
 <label>
-<input type="checkbox" name="delivery_modules" value="library_preparation"></input>
+<input type="radio" name="module_completed" value="library_preparation_long_read"></input>
 <span>DNA Library Preparation and Long Read Sequencing</span>
 </label>
 </div>
-<div class="checkbox">
+<div class="radio">
 <label>
-<input type="checkbox" name="delivery_modules" value="sequencing_qc"></input>
+<input type="radio" name="module_completed" value="sequencing_qc_taxonomic_profiling"></input>
 <span>Sequencing Data QC &amp; Taxonomic Profiling</span>
 </label>
 </div>
-<div class="checkbox">
+<div class="radio">
 <label>
-<input type="checkbox" name="delivery_modules" value="metagenome_assembly"></input>
+<input type="radio" name="module_completed" value="metagenome_assembly_amr"></input>
 <span>Metagenome Assembly &amp; AMR Gene Annotation</span>
 </label>
 </div>
-<div class="checkbox">
+<div class="radio">
 <label>
-<input type="checkbox" name="delivery_modules" value="llms_scientific_literacy"></input>
+<input type="radio" name="module_completed" value="llms_scientific_literacy"></input>
 <span>LLMs and Scientific Literacy</span>
 </label>
 </div>
-<div class="checkbox">
-<label>
-<input type="checkbox" name="delivery_modules" value="full_minicure"></input>
-<span>Full miniCURE (all modules listed above)</span>
-</label>
 </div>
-<div class="checkbox">
-<label>
-<input type="checkbox" name="delivery_modules" value="do_not_intend"></input>
-<span>I do not intend to deliver this content</span>
-</label>
-</div>
-</div>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-teaching_support" data-question-id="teaching_support" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;teaching_support_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;teaching_support_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div class="shiny-input-textarea form-group shiny-input-container">
-<label class="control-label" id="teaching_support-label" for="teaching_support"><p>What support or resources would help you feel more ready to teach this?</p>
-</label>
-<textarea id="teaching_support" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-delivery_barriers" data-question-id="delivery_barriers" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;delivery_barriers_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;delivery_barriers_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div class="shiny-input-textarea form-group shiny-input-container">
-<label class="control-label" id="delivery_barriers-label" for="delivery_barriers"><p>What barriers might prevent you from delivering this content in the next 12 months?</p>
-</label>
-<textarea id="delivery_barriers" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-repeat_delivery" data-question-id="repeat_delivery" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;repeat_delivery_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;repeat_delivery_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div class="shiny-input-textarea form-group shiny-input-container">
-<label class="control-label" id="repeat_delivery-label" for="repeat_delivery"><p>What would make you more likely to deliver this content more than once?</p>
-</label>
-<textarea id="repeat_delivery" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-educator_comments" data-question-id="educator_comments" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;educator_comments_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;educator_comments_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div class="shiny-input-textarea form-group shiny-input-container">
-<label class="control-label" id="educator_comments-label" for="educator_comments"><p>Please provide any other comments you have.</p>
-</label>
-<textarea id="educator_comments" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
 <p><br></p>
-<p>— educatorend</p>
-<p>Thank you for completing the AI-GENe survey.</p>
-<p>Click <strong>Exit Survey</strong> below to finish.</p>
-<div style="margin-top: 0.5rem; margin-bottom: 0.5rem; position: relative; min-height: 40px;" class="sd-nav-container">
-<div style="width: 100%; text-align: center;">
-<button class="btn btn-default action-button sd-enter-button sd-nav-button" id="close-survey-button" onclick="Shiny.setInputValue(&#39;show_exit_modal&#39;, true, {priority: &#39;event&#39;}); Shiny.setInputValue(&#39;clear_cookies_on_exit&#39;, false, {priority: &#39;event&#39;});" style="display: inline-block;" type="button"><span class="action-label">Exit Survey</span></button>
+<p>— reflection</p>
 </div>
-</div>
-<script>
-      Shiny.addCustomMessageHandler('closeWindow', function(message) {
-        window.close();
-        if (!window.closed) {
-          alert('Please close this tab manually to exit the survey.');
-        }
-      });
-
-      Shiny.addCustomMessageHandler('clearCookies', function(message) {
-        if (typeof surveydownCookies !== 'undefined' && surveydownCookies.clear) {
-          surveydownCookies.clear();
-        }
-      });
-
-      Shiny.addCustomMessageHandler('forceRestart', function(message) {
-        if (typeof surveydownCookies !== 'undefined' && surveydownCookies.forceRestart) {
-          surveydownCookies.forceRestart();
-        } else if (typeof surveydownCookies !== 'undefined' && surveydownCookies.clear) {
-          surveydownCookies.clear();
-        }
-        window.location.reload();
-      });
-    </script>
-<p><br></p>
-<p>— studentpage</p>
-</div>
-<div id="your-experience-with-ai-gene-1" class="section level1">
-<h1>Your experience with AI-GENe</h1>
-<p>The questions displayed on this page are based on how you described
-yourself previously.</p>
-<p>Please do not include names, institution names, email addresses, or
-other identifying information in your written responses.</p>
-<div id="container-student_institution" data-question-id="student_institution" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;student_institution_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;student_institution_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="student_institution" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="student_institution-label">
-<label class="control-label" id="student_institution-label" for="student_institution"><p>Describe the institution where you attend.</p>
-</label>
-<div class="shiny-options-group">
-<div class="radio">
-<label>
-<input type="radio" name="student_institution" value="r1"></input>
-<span>Doctoral University – Very high research activity (R1)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="student_institution" value="r2"></input>
-<span>Doctoral University – High research activity (R2)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="student_institution" value="masters"></input>
-<span>Master’s College or University</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="student_institution" value="pui"></input>
-<span>Primarily Undergraduate Institution (PUI)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="student_institution" value="community_college"></input>
-<span>Community College</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="student_institution" value="high_school"></input>
-<span>High School</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="student_institution" value="other"></input>
-<span>Other</span>
-</label>
-</div>
-</div>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-student_institution_other" data-question-id="student_institution_other" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;student_institution_other_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;student_institution_other_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div class="shiny-input-textarea form-group shiny-input-container">
-<label class="control-label" id="student_institution_other-label" for="student_institution_other"><p>Optional: If you selected “Other,” please describe the type of institution you attend.</p>
-</label>
-<textarea id="student_institution_other" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<p><br></p>
+<div id="reflecting-on-your-experience" class="section level1">
+<h1>Reflecting on your experience</h1>
 <p>These questions are intended to help you reflect on your experience
-with the AI-GENe event. Please rate how much you agree with each
-statement.</p>
-<div id="container-student_lab_skills" data-question-id="student_lab_skills" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;student_lab_skills_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;student_lab_skills_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="student_lab_skills" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="student_lab_skills-label">
-<label class="control-label" id="student_lab_skills-label" for="student_lab_skills"><p>My skills and comfort with genetics lab work have improved.</p>
+working through the AI-GENe module. Please rate how much you agree with
+each statement.</p>
+<div id="container-lab_skills" data-question-id="lab_skills" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;lab_skills_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;lab_skills_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="lab_skills" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="lab_skills-label">
+<label class="control-label" id="lab_skills-label" for="lab_skills"><p>After completing the activity, my skills and comfort with genetics lab work have improved.</p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
 <label>
-<input type="radio" name="student_lab_skills" value="1"></input>
+<input type="radio" name="lab_skills" value="1"></input>
 <span>Not at all (1)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_lab_skills" value="2"></input>
+<input type="radio" name="lab_skills" value="2"></input>
 <span>Slightly (2)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_lab_skills" value="3"></input>
+<input type="radio" name="lab_skills" value="3"></input>
 <span>Moderately (3)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_lab_skills" value="4"></input>
+<input type="radio" name="lab_skills" value="4"></input>
 <span>Quite a bit (4)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_lab_skills" value="5"></input>
+<input type="radio" name="lab_skills" value="5"></input>
 <span>Very much (5)</span>
 </label>
 </div>
@@ -950,38 +594,38 @@ statement.</p>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
-<div id="container-student_data_analysis" data-question-id="student_data_analysis" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;student_data_analysis_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;student_data_analysis_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="student_data_analysis" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="student_data_analysis-label">
-<label class="control-label" id="student_data_analysis-label" for="student_data_analysis"><p>My skills and comfort with analyzing genetic data have improved.</p>
+<div id="container-data_analysis_skills" data-question-id="data_analysis_skills" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;data_analysis_skills_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;data_analysis_skills_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="data_analysis_skills" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="data_analysis_skills-label">
+<label class="control-label" id="data_analysis_skills-label" for="data_analysis_skills"><p>After completing the activity, my skills and comfort with analyzing genetic data have improved.</p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
 <label>
-<input type="radio" name="student_data_analysis" value="1"></input>
+<input type="radio" name="data_analysis_skills" value="1"></input>
 <span>Not at all (1)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_data_analysis" value="2"></input>
+<input type="radio" name="data_analysis_skills" value="2"></input>
 <span>Slightly (2)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_data_analysis" value="3"></input>
+<input type="radio" name="data_analysis_skills" value="3"></input>
 <span>Moderately (3)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_data_analysis" value="4"></input>
+<input type="radio" name="data_analysis_skills" value="4"></input>
 <span>Quite a bit (4)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_data_analysis" value="5"></input>
+<input type="radio" name="data_analysis_skills" value="5"></input>
 <span>Very much (5)</span>
 </label>
 </div>
@@ -989,38 +633,38 @@ statement.</p>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
-<div id="container-student_genomics_tools" data-question-id="student_genomics_tools" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;student_genomics_tools_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;student_genomics_tools_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="student_genomics_tools" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="student_genomics_tools-label">
-<label class="control-label" id="student_genomics_tools-label" for="student_genomics_tools"><p>My skills and comfort with using genomics tools and/or websites have improved.</p>
+<div id="container-genomics_tools" data-question-id="genomics_tools" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;genomics_tools_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;genomics_tools_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="genomics_tools" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="genomics_tools-label">
+<label class="control-label" id="genomics_tools-label" for="genomics_tools"><p>After completing the activity, my skills and comfort with using genomics tools and/or websites have improved.</p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
 <label>
-<input type="radio" name="student_genomics_tools" value="1"></input>
+<input type="radio" name="genomics_tools" value="1"></input>
 <span>Not at all (1)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_genomics_tools" value="2"></input>
+<input type="radio" name="genomics_tools" value="2"></input>
 <span>Slightly (2)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_genomics_tools" value="3"></input>
+<input type="radio" name="genomics_tools" value="3"></input>
 <span>Moderately (3)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_genomics_tools" value="4"></input>
+<input type="radio" name="genomics_tools" value="4"></input>
 <span>Quite a bit (4)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_genomics_tools" value="5"></input>
+<input type="radio" name="genomics_tools" value="5"></input>
 <span>Very much (5)</span>
 </label>
 </div>
@@ -1028,38 +672,38 @@ statement.</p>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
-<div id="container-student_ai_tools" data-question-id="student_ai_tools" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;student_ai_tools_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;student_ai_tools_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="student_ai_tools" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="student_ai_tools-label">
-<label class="control-label" id="student_ai_tools-label" for="student_ai_tools"><p>My skills and comfort with using AI-based tools for genetics work have improved.</p>
+<div id="container-ai_tools" data-question-id="ai_tools" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;ai_tools_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;ai_tools_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="ai_tools" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="ai_tools-label">
+<label class="control-label" id="ai_tools-label" for="ai_tools"><p>After completing the activity, my skills and comfort with using AI-based tools for genetics work have improved.</p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
 <label>
-<input type="radio" name="student_ai_tools" value="1"></input>
+<input type="radio" name="ai_tools" value="1"></input>
 <span>Not at all (1)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_ai_tools" value="2"></input>
+<input type="radio" name="ai_tools" value="2"></input>
 <span>Slightly (2)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_ai_tools" value="3"></input>
+<input type="radio" name="ai_tools" value="3"></input>
 <span>Moderately (3)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_ai_tools" value="4"></input>
+<input type="radio" name="ai_tools" value="4"></input>
 <span>Quite a bit (4)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_ai_tools" value="5"></input>
+<input type="radio" name="ai_tools" value="5"></input>
 <span>Very much (5)</span>
 </label>
 </div>
@@ -1067,38 +711,38 @@ statement.</p>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
-<div id="container-student_metagenomics_knowledge" data-question-id="student_metagenomics_knowledge" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;student_metagenomics_knowledge_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;student_metagenomics_knowledge_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="student_metagenomics_knowledge" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="student_metagenomics_knowledge-label">
-<label class="control-label" id="student_metagenomics_knowledge-label" for="student_metagenomics_knowledge"><p>I am more knowledgeable about how metagenomics research happens.</p>
+<div id="container-apply_skills" data-question-id="apply_skills" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;apply_skills_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;apply_skills_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="apply_skills" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="apply_skills-label">
+<label class="control-label" id="apply_skills-label" for="apply_skills"><p>This activity made me apply my skills, rather than recall facts.</p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
 <label>
-<input type="radio" name="student_metagenomics_knowledge" value="1"></input>
+<input type="radio" name="apply_skills" value="1"></input>
 <span>Not at all (1)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_metagenomics_knowledge" value="2"></input>
+<input type="radio" name="apply_skills" value="2"></input>
 <span>Slightly (2)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_metagenomics_knowledge" value="3"></input>
+<input type="radio" name="apply_skills" value="3"></input>
 <span>Moderately (3)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_metagenomics_knowledge" value="4"></input>
+<input type="radio" name="apply_skills" value="4"></input>
 <span>Quite a bit (4)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_metagenomics_knowledge" value="5"></input>
+<input type="radio" name="apply_skills" value="5"></input>
 <span>Very much (5)</span>
 </label>
 </div>
@@ -1106,38 +750,38 @@ statement.</p>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
-<div id="container-student_ai_knowledge" data-question-id="student_ai_knowledge" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;student_ai_knowledge_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;student_ai_knowledge_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="student_ai_knowledge" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="student_ai_knowledge-label">
-<label class="control-label" id="student_ai_knowledge-label" for="student_ai_knowledge"><p>I am more knowledgeable about how AI models work.</p>
+<div id="container-evaluate_evidence" data-question-id="evaluate_evidence" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;evaluate_evidence_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;evaluate_evidence_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="evaluate_evidence" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="evaluate_evidence-label">
+<label class="control-label" id="evaluate_evidence-label" for="evaluate_evidence"><p>This activity made me evaluate evidence, rather than recall facts.</p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
 <label>
-<input type="radio" name="student_ai_knowledge" value="1"></input>
+<input type="radio" name="evaluate_evidence" value="1"></input>
 <span>Not at all (1)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_ai_knowledge" value="2"></input>
+<input type="radio" name="evaluate_evidence" value="2"></input>
 <span>Slightly (2)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_ai_knowledge" value="3"></input>
+<input type="radio" name="evaluate_evidence" value="3"></input>
 <span>Moderately (3)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_ai_knowledge" value="4"></input>
+<input type="radio" name="evaluate_evidence" value="4"></input>
 <span>Quite a bit (4)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_ai_knowledge" value="5"></input>
+<input type="radio" name="evaluate_evidence" value="5"></input>
 <span>Very much (5)</span>
 </label>
 </div>
@@ -1145,38 +789,38 @@ statement.</p>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
-<div id="container-student_genomics_curiosity" data-question-id="student_genomics_curiosity" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;student_genomics_curiosity_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;student_genomics_curiosity_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="student_genomics_curiosity" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="student_genomics_curiosity-label">
-<label class="control-label" id="student_genomics_curiosity-label" for="student_genomics_curiosity"><p>I am more curious about genomics, metagenomics, and/or genetics.</p>
+<div id="container-draw_conclusions" data-question-id="draw_conclusions" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;draw_conclusions_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;draw_conclusions_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="draw_conclusions" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="draw_conclusions-label">
+<label class="control-label" id="draw_conclusions-label" for="draw_conclusions"><p>This activity helped me draw conclusions from data.</p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
 <label>
-<input type="radio" name="student_genomics_curiosity" value="1"></input>
+<input type="radio" name="draw_conclusions" value="1"></input>
 <span>Not at all (1)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_genomics_curiosity" value="2"></input>
+<input type="radio" name="draw_conclusions" value="2"></input>
 <span>Slightly (2)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_genomics_curiosity" value="3"></input>
+<input type="radio" name="draw_conclusions" value="3"></input>
 <span>Moderately (3)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_genomics_curiosity" value="4"></input>
+<input type="radio" name="draw_conclusions" value="4"></input>
 <span>Quite a bit (4)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_genomics_curiosity" value="5"></input>
+<input type="radio" name="draw_conclusions" value="5"></input>
 <span>Very much (5)</span>
 </label>
 </div>
@@ -1184,38 +828,38 @@ statement.</p>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
-<div id="container-student_genomics_learning" data-question-id="student_genomics_learning" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;student_genomics_learning_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;student_genomics_learning_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="student_genomics_learning" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="student_genomics_learning-label">
-<label class="control-label" id="student_genomics_learning-label" for="student_genomics_learning"><p>I want to learn more about genomics and/or genetics.</p>
+<div id="container-real_science" data-question-id="real_science" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;real_science_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;real_science_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="real_science" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="real_science-label">
+<label class="control-label" id="real_science-label" for="real_science"><p>This activity allowed me to do “real science.”</p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
 <label>
-<input type="radio" name="student_genomics_learning" value="1"></input>
+<input type="radio" name="real_science" value="1"></input>
 <span>Not at all (1)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_genomics_learning" value="2"></input>
+<input type="radio" name="real_science" value="2"></input>
 <span>Slightly (2)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_genomics_learning" value="3"></input>
+<input type="radio" name="real_science" value="3"></input>
 <span>Moderately (3)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_genomics_learning" value="4"></input>
+<input type="radio" name="real_science" value="4"></input>
 <span>Quite a bit (4)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_genomics_learning" value="5"></input>
+<input type="radio" name="real_science" value="5"></input>
 <span>Very much (5)</span>
 </label>
 </div>
@@ -1223,38 +867,38 @@ statement.</p>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
-<div id="container-student_ai_genomics_understanding" data-question-id="student_ai_genomics_understanding" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;student_ai_genomics_understanding_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;student_ai_genomics_understanding_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="student_ai_genomics_understanding" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="student_ai_genomics_understanding-label">
-<label class="control-label" id="student_ai_genomics_understanding-label" for="student_ai_genomics_understanding"><p>I have a better understanding of how AI is used in genomics and/or metagenomics research.</p>
+<div id="container-stem_interest" data-question-id="stem_interest" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;stem_interest_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;stem_interest_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="stem_interest" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="stem_interest-label">
+<label class="control-label" id="stem_interest-label" for="stem_interest"><p>After completing the activity, I have more interest in STEM careers.</p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
 <label>
-<input type="radio" name="student_ai_genomics_understanding" value="1"></input>
+<input type="radio" name="stem_interest" value="1"></input>
 <span>Not at all (1)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_ai_genomics_understanding" value="2"></input>
+<input type="radio" name="stem_interest" value="2"></input>
 <span>Slightly (2)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_ai_genomics_understanding" value="3"></input>
+<input type="radio" name="stem_interest" value="3"></input>
 <span>Moderately (3)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_ai_genomics_understanding" value="4"></input>
+<input type="radio" name="stem_interest" value="4"></input>
 <span>Quite a bit (4)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="student_ai_genomics_understanding" value="5"></input>
+<input type="radio" name="stem_interest" value="5"></input>
 <span>Very much (5)</span>
 </label>
 </div>
@@ -1262,186 +906,299 @@ statement.</p>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
-<div id="container-student_response_comments" data-question-id="student_response_comments" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;student_response_comments_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;student_response_comments_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div class="shiny-input-textarea form-group shiny-input-container">
-<label class="control-label" id="student_response_comments-label" for="student_response_comments"><p>Optional: In 1–2 sentences, tell us about your responses above.</p>
+<div id="container-stem_application" data-question-id="stem_application" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;stem_application_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;stem_application_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="stem_application" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="stem_application-label">
+<label class="control-label" id="stem_application-label" for="stem_application"><p>After completing the activity, I am more interested in incorporating what I learned into my work/research.</p>
 </label>
-<textarea id="student_response_comments" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
+<div class="shiny-options-group">
+<div class="radio">
+<label>
+<input type="radio" name="stem_application" value="1"></input>
+<span>Not at all (1)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="stem_application" value="2"></input>
+<span>Slightly (2)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="stem_application" value="3"></input>
+<span>Moderately (3)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="stem_application" value="4"></input>
+<span>Quite a bit (4)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="stem_application" value="5"></input>
+<span>Very much (5)</span>
+</label>
+</div>
+</div>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
-<div id="container-student_engaging_parts" data-question-id="student_engaging_parts" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;student_engaging_parts_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;student_engaging_parts_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div class="shiny-input-textarea form-group shiny-input-container">
-<label class="control-label" id="student_engaging_parts-label" for="student_engaging_parts"><p>Optional: Were any parts of the event particularly engaging? If so, please describe.</p>
+<div id="container-metagenomics_knowledge" data-question-id="metagenomics_knowledge" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;metagenomics_knowledge_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;metagenomics_knowledge_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="metagenomics_knowledge" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="metagenomics_knowledge-label">
+<label class="control-label" id="metagenomics_knowledge-label" for="metagenomics_knowledge"><p>After completing the activity, I am more knowledgeable about how metagenomics research happens.</p>
 </label>
-<textarea id="student_engaging_parts" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
+<div class="shiny-options-group">
+<div class="radio">
+<label>
+<input type="radio" name="metagenomics_knowledge" value="1"></input>
+<span>Not at all (1)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="metagenomics_knowledge" value="2"></input>
+<span>Slightly (2)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="metagenomics_knowledge" value="3"></input>
+<span>Moderately (3)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="metagenomics_knowledge" value="4"></input>
+<span>Quite a bit (4)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="metagenomics_knowledge" value="5"></input>
+<span>Very much (5)</span>
+</label>
+</div>
+</div>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
-<div id="container-student_confusing_parts" data-question-id="student_confusing_parts" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;student_confusing_parts_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;student_confusing_parts_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div class="shiny-input-textarea form-group shiny-input-container">
-<label class="control-label" id="student_confusing_parts-label" for="student_confusing_parts"><p>Optional: Did you find any parts of the event confusing? If so, please describe.</p>
+<div id="container-ai_models_knowledge" data-question-id="ai_models_knowledge" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;ai_models_knowledge_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;ai_models_knowledge_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="ai_models_knowledge" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="ai_models_knowledge-label">
+<label class="control-label" id="ai_models_knowledge-label" for="ai_models_knowledge"><p>After completing the activity, I am more knowledgeable about how AI models work.</p>
 </label>
-<textarea id="student_confusing_parts" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
+<div class="shiny-options-group">
+<div class="radio">
+<label>
+<input type="radio" name="ai_models_knowledge" value="1"></input>
+<span>Not at all (1)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="ai_models_knowledge" value="2"></input>
+<span>Slightly (2)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="ai_models_knowledge" value="3"></input>
+<span>Moderately (3)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="ai_models_knowledge" value="4"></input>
+<span>Quite a bit (4)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="ai_models_knowledge" value="5"></input>
+<span>Very much (5)</span>
+</label>
+</div>
+</div>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
-<div id="container-student_improvement_suggestions" data-question-id="student_improvement_suggestions" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;student_improvement_suggestions_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;student_improvement_suggestions_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div class="shiny-input-textarea form-group shiny-input-container">
-<label class="control-label" id="student_improvement_suggestions-label" for="student_improvement_suggestions"><p>Optional: What suggestions, if any, do you have for improvement?</p>
+<div id="container-genomics_curiosity" data-question-id="genomics_curiosity" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;genomics_curiosity_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;genomics_curiosity_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="genomics_curiosity" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="genomics_curiosity-label">
+<label class="control-label" id="genomics_curiosity-label" for="genomics_curiosity"><p>After completing the activity, I am more curious about genomics/metagenomics/genetics.</p>
 </label>
-<textarea id="student_improvement_suggestions" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
+<div class="shiny-options-group">
+<div class="radio">
+<label>
+<input type="radio" name="genomics_curiosity" value="1"></input>
+<span>Not at all (1)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="genomics_curiosity" value="2"></input>
+<span>Slightly (2)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="genomics_curiosity" value="3"></input>
+<span>Moderately (3)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="genomics_curiosity" value="4"></input>
+<span>Quite a bit (4)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="genomics_curiosity" value="5"></input>
+<span>Very much (5)</span>
+</label>
+</div>
+</div>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+<div id="container-learn_more_genomics" data-question-id="learn_more_genomics" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;learn_more_genomics_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;learn_more_genomics_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="learn_more_genomics" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="learn_more_genomics-label">
+<label class="control-label" id="learn_more_genomics-label" for="learn_more_genomics"><p>After completing the activity, I want to learn more about genomics/genetics.</p>
+</label>
+<div class="shiny-options-group">
+<div class="radio">
+<label>
+<input type="radio" name="learn_more_genomics" value="1"></input>
+<span>Not at all (1)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="learn_more_genomics" value="2"></input>
+<span>Slightly (2)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="learn_more_genomics" value="3"></input>
+<span>Moderately (3)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="learn_more_genomics" value="4"></input>
+<span>Quite a bit (4)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="learn_more_genomics" value="5"></input>
+<span>Very much (5)</span>
+</label>
+</div>
+</div>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+<div id="container-ai_genomics_understanding" data-question-id="ai_genomics_understanding" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;ai_genomics_understanding_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;ai_genomics_understanding_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="ai_genomics_understanding" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="ai_genomics_understanding-label">
+<label class="control-label" id="ai_genomics_understanding-label" for="ai_genomics_understanding"><p>After completing the activity, I have a better understanding of how AI is used in genomics/metagenomics research.</p>
+</label>
+<div class="shiny-options-group">
+<div class="radio">
+<label>
+<input type="radio" name="ai_genomics_understanding" value="1"></input>
+<span>Not at all (1)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="ai_genomics_understanding" value="2"></input>
+<span>Slightly (2)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="ai_genomics_understanding" value="3"></input>
+<span>Moderately (3)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="ai_genomics_understanding" value="4"></input>
+<span>Quite a bit (4)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="ai_genomics_understanding" value="5"></input>
+<span>Very much (5)</span>
+</label>
+</div>
+</div>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
 <p><br></p>
-<p>— studentend</p>
-<p>Thank you for completing the AI-GENe survey.</p>
-<p>Click <strong>Exit Survey</strong> below to finish.</p>
-<div style="margin-top: 0.5rem; margin-bottom: 0.5rem; position: relative; min-height: 40px;" class="sd-nav-container">
-<div style="width: 100%; text-align: center;">
-<button class="btn btn-default action-button sd-enter-button sd-nav-button" id="close-survey-button" onclick="Shiny.setInputValue(&#39;show_exit_modal&#39;, true, {priority: &#39;event&#39;}); Shiny.setInputValue(&#39;clear_cookies_on_exit&#39;, false, {priority: &#39;event&#39;});" style="display: inline-block;" type="button"><span class="action-label">Exit Survey</span></button>
-</div>
-</div>
-<script>
-      Shiny.addCustomMessageHandler('closeWindow', function(message) {
-        window.close();
-        if (!window.closed) {
-          alert('Please close this tab manually to exit the survey.');
-        }
-      });
-
-      Shiny.addCustomMessageHandler('clearCookies', function(message) {
-        if (typeof surveydownCookies !== 'undefined' && surveydownCookies.clear) {
-          surveydownCookies.clear();
-        }
-      });
-
-      Shiny.addCustomMessageHandler('forceRestart', function(message) {
-        if (typeof surveydownCookies !== 'undefined' && surveydownCookies.forceRestart) {
-          surveydownCookies.forceRestart();
-        } else if (typeof surveydownCookies !== 'undefined' && surveydownCookies.clear) {
-          surveydownCookies.clear();
-        }
-        window.location.reload();
-      });
-    </script>
-<p><br></p>
-<p>— staffpage</p>
-</div>
-<div id="your-experience-with-ai-gene-2" class="section level1">
-<h1>Your experience with AI-GENe</h1>
-<p>The questions displayed on this page are based on how you described
-yourself previously.</p>
 <p>Please do not include names, institution names, email addresses, or
-other identifying information in your written responses.</p>
-<div id="container-affiliate_institution" data-question-id="affiliate_institution" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;affiliate_institution_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;affiliate_institution_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="affiliate_institution" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="affiliate_institution-label">
-<label class="control-label" id="affiliate_institution-label" for="affiliate_institution"><p>Describe the institution with which you are affiliated.</p>
+other identifying information in your responses.</p>
+<div id="container-reflection_comments" data-question-id="reflection_comments" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;reflection_comments_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;reflection_comments_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div class="shiny-input-textarea form-group shiny-input-container">
+<label class="control-label" id="reflection_comments-label" for="reflection_comments"><p>(Optional) In 1–2 sentences, tell us about your responses above.</p>
 </label>
-<div class="shiny-options-group">
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_institution" value="r1"></input>
-<span>Doctoral University – Very high research activity (R1)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_institution" value="r2"></input>
-<span>Doctoral University – High research activity (R2)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_institution" value="masters"></input>
-<span>Master’s College or University</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_institution" value="pui"></input>
-<span>Primarily Undergraduate Institution (PUI)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_institution" value="community_college"></input>
-<span>Community College</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_institution" value="high_school"></input>
-<span>High School</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_institution" value="nonprofit_research"></input>
-<span>Non-profit Research Institution</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_institution" value="biomedical_company"></input>
-<span>Biomedical Research Company</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_institution" value="other"></input>
-<span>Other</span>
-</label>
-</div>
-</div>
+<textarea id="reflection_comments" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
-<div id="container-affiliate_institution_other" data-question-id="affiliate_institution_other" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;affiliate_institution_other_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;affiliate_institution_other_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="container-knowledge_gained" data-question-id="knowledge_gained" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;knowledge_gained_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;knowledge_gained_interacted&#39;, true, {priority: &#39;event&#39;});">
 <div class="shiny-input-textarea form-group shiny-input-container">
-<label class="control-label" id="affiliate_institution_other-label" for="affiliate_institution_other"><p>Optional: If you selected “Other,” please describe the type of institution with which you are affiliated.</p>
+<label class="control-label" id="knowledge_gained-label" for="knowledge_gained"><p>(Optional) In 1–2 sentences, tell us something you are more knowledgeable about.</p>
 </label>
-<textarea id="affiliate_institution_other" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
+<textarea id="knowledge_gained" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
 <p><br></p>
+<p>— teaching</p>
+</div>
+<div id="reflecting-on-use-in-the-classroom" class="section level1">
+<h1>Reflecting on use in the classroom</h1>
 <p>These questions are intended to help you reflect on your experience
-with the AI-GENe event. Please rate how much you agree with each
-statement.</p>
-<div id="container-affiliate_lab_skills" data-question-id="affiliate_lab_skills" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;affiliate_lab_skills_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;affiliate_lab_skills_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="affiliate_lab_skills" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="affiliate_lab_skills-label">
-<label class="control-label" id="affiliate_lab_skills-label" for="affiliate_lab_skills"><p>My skills and comfort with genetics lab work have improved.</p>
+working through the AI-GENe module. Please rate how much you agree with
+each statement.</p>
+<div id="container-teaching_confidence" data-question-id="teaching_confidence" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;teaching_confidence_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;teaching_confidence_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="teaching_confidence" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="teaching_confidence-label">
+<label class="control-label" id="teaching_confidence-label" for="teaching_confidence"><p>I feel more confident teaching content like the AI-GENe module.</p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
 <label>
-<input type="radio" name="affiliate_lab_skills" value="1"></input>
+<input type="radio" name="teaching_confidence" value="1"></input>
 <span>Not at all (1)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="affiliate_lab_skills" value="2"></input>
+<input type="radio" name="teaching_confidence" value="2"></input>
 <span>Slightly (2)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="affiliate_lab_skills" value="3"></input>
+<input type="radio" name="teaching_confidence" value="3"></input>
 <span>Moderately (3)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="affiliate_lab_skills" value="4"></input>
+<input type="radio" name="teaching_confidence" value="4"></input>
 <span>Quite a bit (4)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="affiliate_lab_skills" value="5"></input>
+<input type="radio" name="teaching_confidence" value="5"></input>
 <span>Very much (5)</span>
 </label>
 </div>
@@ -1449,38 +1206,38 @@ statement.</p>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
-<div id="container-affiliate_data_analysis" data-question-id="affiliate_data_analysis" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;affiliate_data_analysis_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;affiliate_data_analysis_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="affiliate_data_analysis" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="affiliate_data_analysis-label">
-<label class="control-label" id="affiliate_data_analysis-label" for="affiliate_data_analysis"><p>My skills and comfort with analyzing genetic data have improved.</p>
+<div id="container-real_world_significance" data-question-id="real_world_significance" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;real_world_significance_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;real_world_significance_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="real_world_significance" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="real_world_significance-label">
+<label class="control-label" id="real_world_significance-label" for="real_world_significance"><p>The AI-GENe module had real-world significance.</p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
 <label>
-<input type="radio" name="affiliate_data_analysis" value="1"></input>
+<input type="radio" name="real_world_significance" value="1"></input>
 <span>Not at all (1)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="affiliate_data_analysis" value="2"></input>
+<input type="radio" name="real_world_significance" value="2"></input>
 <span>Slightly (2)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="affiliate_data_analysis" value="3"></input>
+<input type="radio" name="real_world_significance" value="3"></input>
 <span>Moderately (3)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="affiliate_data_analysis" value="4"></input>
+<input type="radio" name="real_world_significance" value="4"></input>
 <span>Quite a bit (4)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="affiliate_data_analysis" value="5"></input>
+<input type="radio" name="real_world_significance" value="5"></input>
 <span>Very much (5)</span>
 </label>
 </div>
@@ -1488,313 +1245,98 @@ statement.</p>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
-<div id="container-affiliate_genomics_tools" data-question-id="affiliate_genomics_tools" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;affiliate_genomics_tools_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;affiliate_genomics_tools_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="affiliate_genomics_tools" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="affiliate_genomics_tools-label">
-<label class="control-label" id="affiliate_genomics_tools-label" for="affiliate_genomics_tools"><p>My skills and comfort with using genomics tools and/or websites have improved.</p>
+<div id="container-incorporate_similar_content" data-question-id="incorporate_similar_content" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;incorporate_similar_content_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;incorporate_similar_content_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="incorporate_similar_content" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="incorporate_similar_content-label">
+<label class="control-label" id="incorporate_similar_content-label" for="incorporate_similar_content"><p>I plan to incorporate more content similar to the AI-GENe module.</p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
 <label>
-<input type="radio" name="affiliate_genomics_tools" value="1"></input>
+<input type="radio" name="incorporate_similar_content" value="1"></input>
 <span>Not at all (1)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="affiliate_genomics_tools" value="2"></input>
+<input type="radio" name="incorporate_similar_content" value="2"></input>
 <span>Slightly (2)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="affiliate_genomics_tools" value="3"></input>
+<input type="radio" name="incorporate_similar_content" value="3"></input>
 <span>Moderately (3)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="affiliate_genomics_tools" value="4"></input>
+<input type="radio" name="incorporate_similar_content" value="4"></input>
 <span>Quite a bit (4)</span>
 </label>
 </div>
 <div class="radio">
 <label>
-<input type="radio" name="affiliate_genomics_tools" value="5"></input>
+<input type="radio" name="incorporate_similar_content" value="5"></input>
 <span>Very much (5)</span>
 </label>
 </div>
 </div>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-affiliate_ai_tools" data-question-id="affiliate_ai_tools" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;affiliate_ai_tools_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;affiliate_ai_tools_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="affiliate_ai_tools" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="affiliate_ai_tools-label">
-<label class="control-label" id="affiliate_ai_tools-label" for="affiliate_ai_tools"><p>My skills and comfort with using AI-based tools for genetics work have improved.</p>
-</label>
-<div class="shiny-options-group">
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_ai_tools" value="1"></input>
-<span>Not at all (1)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_ai_tools" value="2"></input>
-<span>Slightly (2)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_ai_tools" value="3"></input>
-<span>Moderately (3)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_ai_tools" value="4"></input>
-<span>Quite a bit (4)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_ai_tools" value="5"></input>
-<span>Very much (5)</span>
-</label>
-</div>
-</div>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-affiliate_metagenomics_knowledge" data-question-id="affiliate_metagenomics_knowledge" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;affiliate_metagenomics_knowledge_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;affiliate_metagenomics_knowledge_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="affiliate_metagenomics_knowledge" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="affiliate_metagenomics_knowledge-label">
-<label class="control-label" id="affiliate_metagenomics_knowledge-label" for="affiliate_metagenomics_knowledge"><p>I am more knowledgeable about how metagenomics research happens.</p>
-</label>
-<div class="shiny-options-group">
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_metagenomics_knowledge" value="1"></input>
-<span>Not at all (1)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_metagenomics_knowledge" value="2"></input>
-<span>Slightly (2)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_metagenomics_knowledge" value="3"></input>
-<span>Moderately (3)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_metagenomics_knowledge" value="4"></input>
-<span>Quite a bit (4)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_metagenomics_knowledge" value="5"></input>
-<span>Very much (5)</span>
-</label>
-</div>
-</div>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-affiliate_ai_knowledge" data-question-id="affiliate_ai_knowledge" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;affiliate_ai_knowledge_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;affiliate_ai_knowledge_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="affiliate_ai_knowledge" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="affiliate_ai_knowledge-label">
-<label class="control-label" id="affiliate_ai_knowledge-label" for="affiliate_ai_knowledge"><p>I am more knowledgeable about how AI models work.</p>
-</label>
-<div class="shiny-options-group">
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_ai_knowledge" value="1"></input>
-<span>Not at all (1)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_ai_knowledge" value="2"></input>
-<span>Slightly (2)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_ai_knowledge" value="3"></input>
-<span>Moderately (3)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_ai_knowledge" value="4"></input>
-<span>Quite a bit (4)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_ai_knowledge" value="5"></input>
-<span>Very much (5)</span>
-</label>
-</div>
-</div>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-affiliate_genomics_curiosity" data-question-id="affiliate_genomics_curiosity" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;affiliate_genomics_curiosity_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;affiliate_genomics_curiosity_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="affiliate_genomics_curiosity" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="affiliate_genomics_curiosity-label">
-<label class="control-label" id="affiliate_genomics_curiosity-label" for="affiliate_genomics_curiosity"><p>I am more curious about genomics, metagenomics, and/or genetics.</p>
-</label>
-<div class="shiny-options-group">
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_genomics_curiosity" value="1"></input>
-<span>Not at all (1)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_genomics_curiosity" value="2"></input>
-<span>Slightly (2)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_genomics_curiosity" value="3"></input>
-<span>Moderately (3)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_genomics_curiosity" value="4"></input>
-<span>Quite a bit (4)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_genomics_curiosity" value="5"></input>
-<span>Very much (5)</span>
-</label>
-</div>
-</div>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-affiliate_genomics_learning" data-question-id="affiliate_genomics_learning" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;affiliate_genomics_learning_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;affiliate_genomics_learning_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="affiliate_genomics_learning" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="affiliate_genomics_learning-label">
-<label class="control-label" id="affiliate_genomics_learning-label" for="affiliate_genomics_learning"><p>I want to learn more about genomics and/or genetics.</p>
-</label>
-<div class="shiny-options-group">
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_genomics_learning" value="1"></input>
-<span>Not at all (1)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_genomics_learning" value="2"></input>
-<span>Slightly (2)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_genomics_learning" value="3"></input>
-<span>Moderately (3)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_genomics_learning" value="4"></input>
-<span>Quite a bit (4)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_genomics_learning" value="5"></input>
-<span>Very much (5)</span>
-</label>
-</div>
-</div>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-affiliate_ai_genomics_understanding" data-question-id="affiliate_ai_genomics_understanding" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;affiliate_ai_genomics_understanding_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;affiliate_ai_genomics_understanding_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div id="affiliate_ai_genomics_understanding" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="affiliate_ai_genomics_understanding-label">
-<label class="control-label" id="affiliate_ai_genomics_understanding-label" for="affiliate_ai_genomics_understanding"><p>I have a better understanding of how AI is used in genomics and/or metagenomics research.</p>
-</label>
-<div class="shiny-options-group">
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_ai_genomics_understanding" value="1"></input>
-<span>Not at all (1)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_ai_genomics_understanding" value="2"></input>
-<span>Slightly (2)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_ai_genomics_understanding" value="3"></input>
-<span>Moderately (3)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_ai_genomics_understanding" value="4"></input>
-<span>Quite a bit (4)</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="affiliate_ai_genomics_understanding" value="5"></input>
-<span>Very much (5)</span>
-</label>
-</div>
-</div>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-affiliate_response_comments" data-question-id="affiliate_response_comments" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;affiliate_response_comments_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;affiliate_response_comments_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div class="shiny-input-textarea form-group shiny-input-container">
-<label class="control-label" id="affiliate_response_comments-label" for="affiliate_response_comments"><p>Optional: In 1–2 sentences, tell us about your responses above.</p>
-</label>
-<textarea id="affiliate_response_comments" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-affiliate_engaging_parts" data-question-id="affiliate_engaging_parts" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;affiliate_engaging_parts_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;affiliate_engaging_parts_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div class="shiny-input-textarea form-group shiny-input-container">
-<label class="control-label" id="affiliate_engaging_parts-label" for="affiliate_engaging_parts"><p>Optional: Were any parts of the event particularly engaging? If so, please describe.</p>
-</label>
-<textarea id="affiliate_engaging_parts" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-affiliate_confusing_parts" data-question-id="affiliate_confusing_parts" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;affiliate_confusing_parts_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;affiliate_confusing_parts_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div class="shiny-input-textarea form-group shiny-input-container">
-<label class="control-label" id="affiliate_confusing_parts-label" for="affiliate_confusing_parts"><p>Optional: Did you find any parts of the event confusing? If so, please describe.</p>
-</label>
-<textarea id="affiliate_confusing_parts" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-<div id="container-affiliate_improvement_suggestions" data-question-id="affiliate_improvement_suggestions" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;affiliate_improvement_suggestions_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;affiliate_improvement_suggestions_interacted&#39;, true, {priority: &#39;event&#39;});">
-<div class="shiny-input-textarea form-group shiny-input-container">
-<label class="control-label" id="affiliate_improvement_suggestions-label" for="affiliate_improvement_suggestions"><p>Optional: What suggestions, if any, do you have for improvement?</p>
-</label>
-<textarea id="affiliate_improvement_suggestions" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
 </div>
 <span class="hidden-asterisk">*</span>
 </div>
 <p><br></p>
-<p>— staffend</p>
+<p>Please do not include names, institution names, email addresses, or
+other identifying information in your responses.</p>
+<div id="container-reflection_comments_teaching" data-question-id="reflection_comments_teaching" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;reflection_comments_teaching_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;reflection_comments_teaching_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div class="shiny-input-textarea form-group shiny-input-container">
+<label class="control-label" id="reflection_comments_teaching-label" for="reflection_comments_teaching"><p>(Optional) In 1–2 sentences, tell us about your responses above.</p>
+</label>
+<textarea id="reflection_comments_teaching" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+<div id="container-reflection_comments_likely" data-question-id="reflection_comments_likely" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;reflection_comments_likely_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;reflection_comments_likely_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div class="shiny-input-textarea form-group shiny-input-container">
+<label class="control-label" id="reflection_comments_likely-label" for="reflection_comments_likely"><p>(Optional) Is there anything that would make you more likely to teach the AI-GENe module to your students?</p>
+</label>
+<textarea id="reflection_comments_likely" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+<p><br></p>
+<p>— openended</p>
+</div>
+<div id="additional-reflections" class="section level1">
+<h1>Additional reflections</h1>
+<p>The following open-ended questions are <strong>optional</strong>.</p>
+<p>Please do not include names, institution names, email addresses, or
+other identifying information in your responses.</p>
+<div id="container-engaging_parts" data-question-id="engaging_parts" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;engaging_parts_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;engaging_parts_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div class="shiny-input-textarea form-group shiny-input-container">
+<label class="control-label" id="engaging_parts-label" for="engaging_parts"><p>(Optional) Were any parts of the activity particularly engaging? If so, please describe.</p>
+</label>
+<textarea id="engaging_parts" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+<div id="container-confusing_parts" data-question-id="confusing_parts" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;confusing_parts_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;confusing_parts_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div class="shiny-input-textarea form-group shiny-input-container">
+<label class="control-label" id="confusing_parts-label" for="confusing_parts"><p>(Optional) Did you find any parts of the activity confusing? If so, please describe.</p>
+</label>
+<textarea id="confusing_parts" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+<div id="container-improvement_suggestions" data-question-id="improvement_suggestions" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;improvement_suggestions_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;improvement_suggestions_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div class="shiny-input-textarea form-group shiny-input-container">
+<label class="control-label" id="improvement_suggestions-label" for="improvement_suggestions"><p>(Optional) What suggestions, if any, do you have for lesson improvement?</p>
+</label>
+<textarea id="improvement_suggestions" class="form-control" style="height:100px;" rows="6" cols="80" data-update-on="change"></textarea>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+<p><br></p>
+<p>— end</p>
 <p>Thank you for completing the AI-GENe survey.</p>
 <p>Click <strong>Exit Survey</strong> below to finish.</p>
 <div style="margin-top: 0.5rem; margin-bottom: 0.5rem; position: relative; min-height: 40px;" class="sd-nav-container">

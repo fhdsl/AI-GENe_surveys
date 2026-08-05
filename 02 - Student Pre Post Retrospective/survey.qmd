@@ -23,7 +23,6 @@ survey-settings:
     - consent
     - institution_type
     - module_completed
-    - module_completion_date
     - lab_skills
     - data_analysis_skills
     - genomics_tools
@@ -191,14 +190,6 @@ sd_question(
   id = "module_completed",
   label = "Which AI-GENe module did you complete?",
   option = module_options
-)
-```
-
-```{r}
-sd_question(
-  type = "date",
-  id = "module_completion_date",
-  label = "What date did you complete your AI-GENe module?"
 )
 ```
 

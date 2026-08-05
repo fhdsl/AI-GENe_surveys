@@ -36,19 +36,16 @@ ui <- sd_ui()
 server <- function(input, output, session) {
   # Define any conditional skip logic here (skip to page if a condition is true)
   sd_skip_if(
-    input$consent == "no" ~ "ineligible",
-    input$participant_type == "educator" ~ "educatorpage",
-    input$participant_type == "student" ~ "studentpage",
-    input$participant_type %in% c("staff", "other") ~ "staffpage"
+    input$consent == "no" ~ "ineligible"
   )
-
-  # Define any conditional display logic here (show a question if a condition is true
+  
+  # Define any conditional display logic here (show a question if a condition is true)
   sd_show_if(
-    input$educator_institution == "other" ~ "educator_institution_other",
-    input$student_institution == "other" ~ "student_institution_other",
-    input$affiliate_institution == "other" ~ "affiliate_institution_other"
+    input$participant_type == "educator" ~ "teaching",
+    input$participant_type == "student" ~ "stem_interest",
+    input$participant_type %in% c("self_learner", "other") ~ "stem_application"
   )
-
+  
   # Run surveydown server and define database
   sd_server(db = db)
 }
